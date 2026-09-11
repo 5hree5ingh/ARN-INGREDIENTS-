@@ -21,8 +21,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Our essential oils are distilled from botanicals traced back to the growing region, then profiled by GC-MS so every batch you receive matches the one before it. Supplied in food, pharma and aroma grades.",
     icon: "droplet",
-    image: "/images/essential-oil.jpg",
-    imageAlt: "Amber essential oil bottle with botanicals",
+    image: "/images/cat-essential-oils.jpg",
+    imageAlt: "Amber essential oil bottles with glass dropper on pale stone",
     highlights: [
       "GC-MS profile supplied with every batch",
       "Food, pharmaceutical and aroma grades",
@@ -44,8 +44,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Oleoresins concentrate the volatile and non-volatile fractions of a spice into a single standardised liquid, giving formulators reproducible colour, pungency and flavour without the variability of raw botanicals.",
     icon: "flask",
-    image: "/images/spices-flatlay.jpg",
-    imageAlt: "Spices and botanicals arranged on a pale surface",
+    image: "/images/cat-oleoresins.jpg",
+    imageAlt: "Warm amber oleoresin concentrate in ceramic dish with brass spatula",
     highlights: [
       "Standardised on colour value or pungency units",
       "Residual solvent within pharmacopoeial limits",
@@ -67,8 +67,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Each extract is standardised against a named marker compound by HPLC or UV, with heavy metals, pesticide residue and microbiology tested to USP, EP and IP limits. Custom ratios and solvent systems on request.",
     icon: "leaf",
-    image: "/images/herbs-mortar.jpg",
-    imageAlt: "Dried herbs and roots in apothecary jars",
+    image: "/images/cat-herbal-extracts.jpg",
+    imageAlt: "Sage-green standardized extract powder in ceramic dish on pale stone",
     highlights: [
       "HPLC / UV standardisation against named markers",
       "Water, hydro-alcoholic and CO₂ extraction routes",
@@ -91,8 +91,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Isolated and purified single molecules for formulators who need a defined active rather than a botanical matrix. Supplied with full characterisation — HPLC purity, identity by IR, and residual solvent data.",
     icon: "molecule",
-    image: "/images/lab-glassware.jpg",
-    imageAlt: "Laboratory glassware used in phytochemical isolation",
+    image: "/images/cat-phytochemicals.jpg",
+    imageAlt: "Crystalline golden curcumin isolate in glass dish on pale stone",
     highlights: [
       "Purity from 90% to 98%+ by HPLC",
       "Identity confirmed by IR and melting point",
@@ -115,8 +115,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Botanical actives prepared specifically for topical formulation — colour-controlled, odour-controlled and screened for compatibility with common emulsion and surfactant systems.",
     icon: "sparkle",
-    image: "/images/green-leaves.jpg",
-    imageAlt: "Stone mortar with botanical petals",
+    image: "/images/cat-cosmoceutical.jpg",
+    imageAlt: "Pearlescent cosmetic-grade extract powder in frosted glass vessel with botanical serum",
     highlights: [
       "Cosmetic-grade with INCI documentation",
       "Water-soluble and oil-dispersible grades",
@@ -138,8 +138,8 @@ export const productCategories: ProductCategory[] = [
     intro:
       "Bring us a specification, a marker target or a finished-product brief and we will develop, scale and manufacture it. Capacity is reserved on a campaign basis with full batch traceability and documentation handed over at release.",
     icon: "factory",
-    image: "/images/FACTORY_IMAGES/extraction_plant.jpg",
-    imageAlt: "Extraction vessels used for contract manufacturing campaigns",
+    image: "/images/cat-contract-mfg.jpg",
+    imageAlt: "Bespoke botanical extract vessel, custom sample vials and brass scoop on pale travertine",
     highlights: [
       "Custom marker targets and extraction ratios",
       "Pilot batches before commercial scale-up",

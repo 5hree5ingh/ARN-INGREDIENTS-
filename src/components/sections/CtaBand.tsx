@@ -13,7 +13,7 @@ export function CtaBand({
   return (
     <section className="relative isolate overflow-hidden bg-forest-deep">
       <Image
-        src="/images/hero-botanical.jpg"
+        src="/images/cta-band.jpg"
         alt=""
         aria-hidden="true"
         fill
@@ -41,7 +41,7 @@ export function CtaBand({
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-4 sm:flex-row">
-              <ButtonLink href="/contact">Contact Us</ButtonLink>
+              <ButtonLink href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener noreferrer">Contact Us</ButtonLink>
               <ButtonLink href="/products" variant="outlineLight">
                 Browse Catalogue
               </ButtonLink>

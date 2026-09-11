@@ -42,8 +42,8 @@ export default function AboutPage() {
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
         ]}
-        image="/images/UPDATED_IMAGES/About_us.png"
-        imageAlt="Glass jars of standardised herbal extracts arranged on a marble surface"
+        image="/images/about-banner.jpg"
+        imageAlt="Laboratory sample vials arranged across pale travertine with brass scale"
       />
 
       <StatsBar />

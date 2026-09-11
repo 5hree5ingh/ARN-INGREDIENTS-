@@ -24,8 +24,8 @@ export default function ResearchPage() {
           { href: "/", label: "Home" },
           { href: "/research", label: "Research" },
         ]}
-        image="/images/lab-glassware.jpg"
-        imageAlt="Laboratory glassware in a research setting"
+        image="/images/research-banner.jpg"
+        imageAlt="Analytical laboratory glassware and extract solutions on pale stone benchtop"
       />
 
       <Section className="grain">

@@ -5,7 +5,6 @@ export type FacilityPhoto = {
   alt: string;
   caption: string;
   detail: string;
-  orientation: "landscape" | "portrait";
 };
 
 /** Photographs of the Haridwar plant, supplied by ARN Ingredients. */
@@ -16,7 +15,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Extraction Hall",
     detail:
       "Jacketed stainless steel extractors and receivers arranged over two levels, with demarcated clean-area flooring and GMP signage at every entry point.",
-    orientation: "landscape",
   },
   {
     src: `${DIR}/rotary_extractor.jpg`,
@@ -24,7 +22,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Rotary Extractor",
     detail:
       "Rotary extraction for botanicals that need gentle, uniform solvent contact across the full charge.",
-    orientation: "portrait",
   },
   {
     src: `${DIR}/vaccum_tray_dryer.jpg`,
@@ -32,7 +29,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Vacuum Tray Dryer",
     detail:
       "Low-temperature drying under vacuum protects heat-sensitive markers that would degrade in conventional hot-air drying.",
-    orientation: "portrait",
   },
   {
     src: `${DIR}/extraction_plant2.jpg`,
@@ -40,7 +36,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Distillation & Recovery",
     detail:
       "Condensers and recovery columns return solvent to the process, keeping residual solvent within pharmacopoeial limits.",
-    orientation: "landscape",
   },
   {
     src: `${DIR}/boiler.jpg`,
@@ -48,7 +43,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Steam Generation",
     detail:
       "Dedicated boiler house supplying consistent process steam to extractors, dryers and recovery columns.",
-    orientation: "portrait",
   },
   {
     src: `${DIR}/raw_material_storage.jpg`,
@@ -56,7 +50,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Raw Material Store",
     detail:
       "Incoming botanicals held on pallets by lot, quarantined until identity and quality checks are cleared.",
-    orientation: "landscape",
   },
   {
     src: `${DIR}/finish_good_storage.jpg`,
@@ -64,7 +57,6 @@ export const facilityPhotos: FacilityPhoto[] = [
     caption: "Finished Goods Store",
     detail:
       "Released material held in sealed HDPE drums, lot-marked and staged in dispatch lanes for export consignments.",
-    orientation: "landscape",
   },
 ];
 

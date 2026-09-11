@@ -27,8 +27,8 @@ export default function ContactPage() {
           { href: "/", label: "Home" },
           { href: "/contact", label: "Contact" },
         ]}
-        image="/images/herbs-mortar.jpg"
-        imageAlt="Botanical ingredients in an apothecary setting"
+        image="/images/contact-banner.jpg"
+        imageAlt="Glass vial of golden extract powder with brass spatula and ivory linen on pale stone"
       />
 
       <Section className="grain">

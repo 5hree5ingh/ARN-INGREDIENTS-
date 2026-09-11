@@ -22,8 +22,8 @@ export default function ProductsPage() {
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },
         ]}
-        image="/images/spices-flatlay.jpg"
-        imageAlt="Botanical ingredients and spices arranged on a surface"
+        image="/images/products-banner.jpg"
+        imageAlt="Ceramic dishes holding finished botanical extracts on pale honed stone"
       />
 
       <Section className="grain">

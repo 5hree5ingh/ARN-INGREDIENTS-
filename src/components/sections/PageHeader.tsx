@@ -7,8 +7,8 @@ export function PageHeader({
   title,
   description,
   breadcrumb,
-  image = "/images/herbs-mortar.jpg",
-  imageAlt = "Botanical ingredients in an apothecary setting",
+  image = "/images/about-banner.jpg",
+  imageAlt = "Botanical extracts and laboratory sample vials on pale stone",
 }: {
   eyebrow?: string;
   title: string;
@@ -27,9 +27,14 @@ export function PageHeader({
         sizes="100vw"
         className="object-cover"
       />
+      {/*
+        Directional scrim rather than a flat wash — heavy enough on the left
+        for the copy to stay legible, clearing to the right so the photograph
+        is actually visible instead of reading as a solid green block.
+      */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-forest-deep/82"
+        className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/70 to-forest-deep/40"
       />
 
       <Container className="relative z-10">

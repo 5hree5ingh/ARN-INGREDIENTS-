@@ -40,8 +40,8 @@ export default function Home() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/images/herbs-mortar.jpg"
-                  alt="Dried botanicals and roots in apothecary jars"
+                  src="/images/about-portrait.jpg"
+                  alt="Glass apothecary jars holding standardised botanical extracts on pale stone"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"

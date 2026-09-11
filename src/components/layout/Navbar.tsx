@@ -63,8 +63,10 @@ export function Navbar() {
 
           <div className="hidden xl:block">
             <ButtonLink
-              href="/contact"
+              href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20make%20an%20enquiry."
               className="px-6 py-3.5 whitespace-nowrap"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Enquire
             </ButtonLink>
@@ -114,7 +116,7 @@ export function Navbar() {
                   </li>
                 ))}
                 <li className="mt-7">
-                  <ButtonLink href="/contact" className="w-full">
+                  <ButtonLink href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20request%20a%20quote." className="w-full" target="_blank" rel="noopener noreferrer">
                     Request a Quote
                   </ButtonLink>
                 </li>

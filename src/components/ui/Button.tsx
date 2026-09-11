@@ -18,14 +18,18 @@ export function ButtonLink({
   children,
   variant = "gold",
   className = "",
+  target,
+  rel,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: Variant;
   className?: string;
+  target?: string;
+  rel?: string;
 }) {
   return (
-    <Link href={href} className={`${shared} ${variants[variant]} ${className}`}>
+    <Link href={href} className={`${shared} ${variants[variant]} ${className}`} target={target} rel={rel}>
       {children}
     </Link>
   );

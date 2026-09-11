@@ -76,7 +76,7 @@ export function Hero() {
             className="mt-12 flex flex-col gap-4 sm:flex-row"
           >
             <ButtonLink href="/products">Explore the Catalogue</ButtonLink>
-            <ButtonLink href="/contact" variant="outlineLight">
+            <ButtonLink href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20request%20a%20quotation." variant="outlineLight" target="_blank" rel="noopener noreferrer">
               Request a Quotation
             </ButtonLink>
           </motion.div>
