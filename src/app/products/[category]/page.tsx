@@ -49,9 +49,19 @@ export default async function CategoryPage({
         ]}
         image={found.image}
         imageAlt={found.imageAlt}
+        compact
       />
 
-      <Section className="grain">
+      {/* ── Product list first — tight padding so list starts immediately ── */}
+      <section className="grain py-10 sm:py-12">
+        <div className="mx-auto w-full max-w-[82rem] px-6 sm:px-10">
+          {found.items && <ProductTable name={found.name} items={found.items} />}
+          {found.groups && <ProductGroups groups={found.groups} />}
+        </div>
+      </section>
+
+      {/* ── Overview / What we supply below ── */}
+      <Section className="bg-ivory-warm">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <RevealOnScroll>
             <div className="relative">
@@ -93,25 +103,6 @@ export default async function CategoryPage({
             </ul>
           </RevealOnScroll>
         </div>
-      </Section>
-
-      <Section className="bg-ivory-warm">
-        <RevealOnScroll>
-          <SectionHeading
-            eyebrow={found.groups ? "The Range" : "Product Grades"}
-            title={
-              found.groups ? "Powders we produce" : "Specifications at a glance"
-            }
-            description={
-              found.groups
-                ? "The range below is representative. Assay, carrier system, mesh size and packing can be tailored to your specification."
-                : "Assay ranges, method, solvent system and packing can be adjusted to your specification. Speak to us for grades not listed here."
-            }
-          />
-        </RevealOnScroll>
-
-        {found.items && <ProductTable name={found.name} items={found.items} />}
-        {found.groups && <ProductGroups groups={found.groups} />}
       </Section>
 
       <CtaBand

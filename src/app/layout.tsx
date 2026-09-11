@@ -3,6 +3,8 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { PageTransition } from "@/components/ui/PageTransition";
 import { company } from "@/data/company";
 
 const cormorant = Cormorant_Garamond({
@@ -37,8 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <Navbar />
+        <ScrollToTop />
         <main id="main" className="flex-1">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
       </body>

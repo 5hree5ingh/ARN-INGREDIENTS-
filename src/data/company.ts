@@ -23,7 +23,14 @@ export const company = {
   },
   phones: ["+91-8130000846", "+91-8840804180"],
   email: "ARNINGREDIENTS@GMAIL.COM",
+  // Digits only — used for both wa.me links and the primary enquiry phone line.
+  whatsapp: "918840804180",
 } as const;
+
+/** Pre-filled WhatsApp deep link. */
+export function whatsappLink(message: string) {
+  return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
+}
 
 export const addressLines = [
   company.address.line1,

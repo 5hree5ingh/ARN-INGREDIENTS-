@@ -8,11 +8,16 @@ import { Logo } from "./Logo";
 import { navLinks } from "@/data/navigation";
 import { CloseIcon, MenuIcon } from "@/components/icons";
 import { Container } from "@/components/ui/Container";
-import { ButtonLink } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
+import {
+  EnquireMenu,
+  EnquiryChannelList,
+} from "@/components/ui/EnquireMenu";
 
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [enquireOpen, setEnquireOpen] = useState(false);
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -25,6 +30,14 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!enquireOpen) return;
+    const onKey = (e: KeyboardEvent) =>
+      e.key === "Escape" && setEnquireOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [enquireOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -61,15 +74,31 @@ export function Navbar() {
             </ul>
           </nav>
 
-          <div className="hidden xl:block">
-            <ButtonLink
-              href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+          {/*
+            Opens on hover for pointer users and on click/focus for keyboard
+            and touch. The wrapper spans button + panel so moving the cursor
+            down into the panel does not dismiss it.
+          */}
+          <div
+            className="relative hidden xl:block"
+            onMouseEnter={() => setEnquireOpen(true)}
+            onMouseLeave={() => setEnquireOpen(false)}
+            onFocus={() => setEnquireOpen(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                setEnquireOpen(false);
+              }
+            }}
+          >
+            <Button
+              onClick={() => setEnquireOpen((v) => !v)}
+              aria-expanded={enquireOpen}
+              aria-haspopup="true"
               className="px-6 py-3.5 whitespace-nowrap"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Enquire
-            </ButtonLink>
+            </Button>
+            <EnquireMenu open={enquireOpen} />
           </div>
 
           <button
@@ -115,10 +144,14 @@ export function Navbar() {
                     </Link>
                   </li>
                 ))}
+                {/* No hover on touch — show the channels inline instead */}
                 <li className="mt-7">
-                  <ButtonLink href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20request%20a%20quote." className="w-full" target="_blank" rel="noopener noreferrer">
-                    Request a Quote
-                  </ButtonLink>
+                  <p className="tracked mb-3 text-[0.56rem] font-medium text-gold-deep">
+                    Enquire
+                  </p>
+                  <div className="border border-ink/10">
+                    <EnquiryChannelList onNavigate={() => setOpen(false)} />
+                  </div>
                 </li>
               </ul>
             </Container>

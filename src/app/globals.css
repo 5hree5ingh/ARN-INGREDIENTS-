@@ -24,6 +24,8 @@
 
   --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-page-enter: page-enter 0.4s ease-out both;
 }
 
 html {
@@ -78,5 +80,17 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Page transition — fade in + subtle slide up */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

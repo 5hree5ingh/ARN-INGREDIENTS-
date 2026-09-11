@@ -10,6 +10,7 @@ const rise = {
   show: { opacity: 1, y: 0 },
 };
 
+
 export function Hero() {
   const reduced = useReducedMotion();
   const anim = reduced
@@ -23,12 +24,12 @@ export function Hero() {
   return (
     <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden bg-forest-deep">
       <Image
-        src="/images/FACTORY_IMAGES/extraction_plant.jpg"
-        alt="Stainless steel extraction vessels in the ARN Ingredients GMP plant at Haridwar"
+        src="/images/hero-main.jpg"
+        alt="Standardised botanical extract powders and a crystalline isolate arranged on dark marble"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center brightness-90"
+        className="object-cover object-center"
       />
       {/*
         The photograph already carries its own dark, empty marble on the left
@@ -36,15 +37,15 @@ export function Hero() {
         deliberately soft, so the warm gold lighting and marble veining stay
         visible rather than being flattened under a heavy wash.
       */}
-      {/* Strong left-side scrim for text legibility over bright industrial image */}
+      {/*
+        The photograph is already dark and empty on the left where the copy
+        sits, so this is a light scrim for legibility only — kept soft so the
+        marble, brass and warm gold lighting stay visible rather than being
+        flattened under a heavy wash.
+      */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/60 to-forest-deep/20"
-      />
-      {/* Top-to-bottom vignette for depth */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-forest-deep/30 via-transparent to-forest-deep/50"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-forest-deep/75 via-forest-deep/20 to-transparent"
       />
 
       <Container className="relative z-10">
