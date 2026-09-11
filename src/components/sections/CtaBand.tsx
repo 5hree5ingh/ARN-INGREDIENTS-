@@ -1,7 +1,12 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { ButtonLink } from "@/components/ui/Button";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { EnquiryChannelList } from "@/components/ui/EnquireMenu";
 
 export function CtaBand({
   title = "Tell us the specification you are matching",
@@ -10,6 +15,29 @@ export function CtaBand({
   title?: string;
   description?: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
     <section className="relative isolate overflow-hidden bg-forest-deep">
       <Image
@@ -41,7 +69,42 @@ export function CtaBand({
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-4 sm:flex-row">
-              <ButtonLink href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener noreferrer">Contact Us</ButtonLink>
+              {/* Contact Us — opens channel chooser */}
+              <div className="relative" ref={panelRef}>
+                <Button
+                  variant="gold"
+                  onClick={() => setOpen((v) => !v)}
+                  aria-expanded={open}
+                >
+                  Contact Us
+                </Button>
+
+                <AnimatePresence>
+                  {open && (
+                    <motion.div
+                      initial={reduced ? false : { opacity: 0, y: 8 }}
+                      animate={reduced ? {} : { opacity: 1, y: 0 }}
+                      exit={reduced ? {} : { opacity: 0, y: 6 }}
+                      transition={{
+                        duration: 0.24,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      style={{ transformOrigin: "bottom left" }}
+                      className="absolute bottom-full left-0 z-40 mb-3 w-72 border border-gold/30 bg-ivory shadow-xl"
+                    >
+                      {/* Gold cap */}
+                      <span
+                        aria-hidden="true"
+                        className="block h-px w-full bg-gold/60"
+                      />
+                      <EnquiryChannelList
+                        onNavigate={() => setOpen(false)}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               <ButtonLink href="/products" variant="outlineLight">
                 Browse Catalogue
               </ButtonLink>
