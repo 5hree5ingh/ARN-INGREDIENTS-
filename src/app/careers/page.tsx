@@ -86,8 +86,10 @@ export default function CareersPage() {
               professionals — send your CV and we will keep it on file.
             </p>
             <ButtonLink
-              href={`mailto:${company.email}?subject=${encodeURIComponent("Career enquiry")}`}
+              href="https://wa.me/918840804180?text=Hi%2C%20I%27d%20like%20to%20send%20my%20CV%20for%20a%20career%20opportunity."
               className="mt-12"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Send Your CV
             </ButtonLink>
