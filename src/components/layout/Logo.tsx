@@ -62,7 +62,7 @@ export function Logo({
         >
           ARN
         </span>
-        <span className={`tracked mt-1.5 block text-[0.5rem] font-medium ${sub}`}>
+        <span className={`tracked mt-1.5 block text-[0.6rem] font-medium ${sub}`}>
           Ingredients
         </span>
       </span>
