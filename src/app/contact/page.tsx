@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { addressLines, company } from "@/data/company";
+import { addressLines, salesOfficeLines, company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -34,13 +34,24 @@ export default function ContactPage() {
       <Section className="grain">
         <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <RevealOnScroll>
-            <SectionHeading eyebrow="Our Office" title="ARN Ingredients Pvt. Ltd." />
+            <SectionHeading eyebrow="Our Offices" title="ARN Ingredients Pvt. Ltd." />
 
             <div className="mt-12 space-y-10">
               <div>
-                <h3 className={blockLabel}>Address</h3>
+                <h3 className={blockLabel}>Manufacturing Plant</h3>
                 <address className="mt-3 text-sm leading-8 font-light text-ink-soft not-italic">
                   {addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </div>
+
+              <div>
+                <h3 className={blockLabel}>Sales Office</h3>
+                <address className="mt-3 text-sm leading-8 font-light text-ink-soft not-italic">
+                  {salesOfficeLines.map((line) => (
                     <span key={line} className="block">
                       {line}
                     </span>

@@ -4,7 +4,6 @@ import { Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ButtonLink } from "@/components/ui/Button";
-import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Careers",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Container } from "@/components/ui/Container";
-import { addressLines, company } from "@/data/company";
+import { addressLines, salesOfficeLines, company } from "@/data/company";
 import { productCategories } from "@/data/products";
 
 const companyLinks = [
@@ -22,7 +22,7 @@ export function Footer() {
   return (
     <footer className="bg-forest-deep text-ivory">
       <Container>
-        <div className="grid gap-14 border-b border-ivory/10 py-20 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-14 border-b border-ivory/10 py-20 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.4fr]">
           <div>
             <Logo tone="light" variant="full" />
             <p className="mt-2 max-w-xs text-sm leading-8 font-light text-ivory/60">
@@ -58,13 +58,27 @@ export function Footer() {
 
           <div>
             <h2 className={headingClass}>Get in Touch</h2>
-            <address className="mt-6 text-sm leading-8 font-light text-ivory/60 not-italic">
+
+            <p className="mt-6 text-[0.56rem] font-medium tracking-widest text-ivory/40">MANUFACTURING PLANT</p>
+            <address className="mt-2 text-sm leading-7 font-light text-ivory/60 not-italic">
               {addressLines.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>
               ))}
             </address>
+
+            <div className="my-6 border-t border-ivory/10" />
+
+            <p className="text-[0.56rem] font-medium tracking-widest text-ivory/40">SALES OFFICE</p>
+            <address className="mt-2 text-sm leading-7 font-light text-ivory/60 not-italic">
+              {salesOfficeLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </address>
+
             <div className="mt-6 flex flex-col">
               {company.phones.map((p) => (
                 <a
@@ -89,7 +103,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {company.name}
           </p>
-          <p>Haridwar · Uttarakhand · India</p>
+          <p>Haridwar · Noida · India</p>
         </div>
       </Container>
     </footer>
