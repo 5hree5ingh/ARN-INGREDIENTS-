@@ -83,12 +83,6 @@ export function Navbar() {
             className="relative hidden xl:block"
             onMouseEnter={() => setEnquireOpen(true)}
             onMouseLeave={() => setEnquireOpen(false)}
-            onFocus={() => setEnquireOpen(true)}
-            onBlur={(e) => {
-              if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                setEnquireOpen(false);
-              }
-            }}
           >
             <Button
               onClick={() => setEnquireOpen((v) => !v)}

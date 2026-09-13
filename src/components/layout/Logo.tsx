@@ -40,10 +40,25 @@ export function Logo({
       className="group inline-flex items-center gap-4 focus-visible:outline-1 focus-visible:outline-offset-6 focus-visible:outline-gold"
       aria-label="ARN Ingredients — home"
     >
-      {/* Crop window over the leaf badge at the top of the artwork */}
+      {/* Mobile crop (h-9): offsets scaled proportionally from the h-12 version */}
       <span
         aria-hidden="true"
-        className="relative block h-9 w-9 shrink-0 overflow-hidden md:h-12 md:w-12"
+        className="relative block h-9 w-9 shrink-0 overflow-hidden md:hidden"
+      >
+        <Image
+          src="/logo.png"
+          alt=""
+          width={240}
+          height={240}
+          priority
+          className="absolute max-w-none"
+          style={{ width: "4.4rem", left: "-1.1rem", top: "-0.46rem" }}
+        />
+      </span>
+      {/* Desktop crop (h-12): original offsets */}
+      <span
+        aria-hidden="true"
+        className="relative hidden h-12 w-12 shrink-0 overflow-hidden md:block"
       >
         <Image
           src="/logo.png"

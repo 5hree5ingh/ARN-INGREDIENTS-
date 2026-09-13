@@ -70,7 +70,7 @@ export function Hero() {
     // hero is sized to the *remaining* viewport rather than a full 100vh —
     // otherwise header + hero together exceed one screen and the bottom of
     // the hero (the slide dots) gets pushed just past the fold.
-    <section className="relative isolate flex min-h-[calc(100dvh-57px)] items-start overflow-hidden bg-forest-deep md:min-h-[calc(100dvh-97px)] md:items-center">
+    <section className="relative isolate flex min-h-[calc(100dvh-57px)] items-end overflow-hidden bg-forest-deep pb-10 md:min-h-[calc(100dvh-97px)] md:items-center md:pb-0">
 
       <div aria-hidden="true" className="absolute inset-0">
         {slides.map((s, i) => {
