@@ -70,7 +70,7 @@ export function Hero() {
     // hero is sized to the *remaining* viewport rather than a full 100vh —
     // otherwise header + hero together exceed one screen and the bottom of
     // the hero (the slide dots) gets pushed just past the fold.
-    <section className="relative isolate flex min-h-[calc(100vh-97px)] min-h-[calc(100dvh-97px)] items-center overflow-hidden bg-forest-deep">
+    <section className="relative isolate flex min-h-[calc(100dvh-57px)] items-start overflow-hidden bg-forest-deep md:min-h-[calc(100dvh-97px)] md:items-center">
 
       <div aria-hidden="true" className="absolute inset-0">
         {slides.map((s, i) => {
@@ -142,13 +142,13 @@ export function Hero() {
       />
 
       <Container className="relative z-10">
-        <div className="max-w-4xl py-28">
+        <div className="max-w-4xl py-10 sm:py-20 lg:py-28">
           {/*
             Reserved height keeps the button from shifting between slides.
             The copy cross-fades — outgoing and incoming overlap rather than
             queueing, so the text change stays in step with the 1s image slide.
           */}
-          <div className="relative min-h-[10rem] sm:min-h-[11.5rem] lg:min-h-[13rem] xl:min-h-[15.5rem]">
+          <div className="relative min-h-[8rem] sm:min-h-[11.5rem] lg:min-h-[13rem] xl:min-h-[15.5rem]">
             <AnimatePresence initial={false}>
               <motion.div
                 key={index}
@@ -158,7 +158,7 @@ export function Hero() {
                 exit={reduced ? {} : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.55, ease: "easeOut" }}
               >
-                <p className="tracked gold-rule text-[0.66rem] font-medium text-gold">
+                <p className="tracked text-[0.66rem] font-medium text-gold">
                   {slide.eyebrow}
                 </p>
 
@@ -168,7 +168,7 @@ export function Hero() {
                   the grotesque reads as plain-spoken and credible where the
                   serif read as a luxury boutique.
                 */}
-                <h1 className="mt-8 text-[2.5rem] leading-[1.08] font-medium tracking-[-0.02em] text-ivory sm:text-5xl lg:text-[4rem] xl:text-[5rem]">
+                <h1 className="mt-4 text-[1.9rem] leading-[1.08] font-medium tracking-[-0.02em] text-ivory sm:mt-8 sm:text-5xl lg:text-[4rem] xl:text-[5rem]">
                   {slide.lead}
                   <span className="block text-gold">{slide.accent}</span>
                 </h1>
@@ -179,7 +179,7 @@ export function Hero() {
           <ButtonLink href="/products">Explore the Catalogue</ButtonLink>
 
           {slides.length > 1 && (
-            <div className="mt-14 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3 sm:mt-10 lg:mt-14">
               {slides.map((s, i) => (
                 <button
                   key={s.src}

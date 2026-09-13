@@ -45,7 +45,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-ink/10 bg-ivory/95 backdrop-blur-md">
       <Container>
-        <div className="flex h-24 items-center justify-between gap-6">
+        <div className="flex h-14 items-center justify-between gap-6 md:h-24">
           <Logo />
 
           <nav aria-label="Primary" className="hidden xl:block">

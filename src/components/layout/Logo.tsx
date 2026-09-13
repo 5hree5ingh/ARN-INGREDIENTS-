@@ -43,7 +43,7 @@ export function Logo({
       {/* Crop window over the leaf badge at the top of the artwork */}
       <span
         aria-hidden="true"
-        className="relative block h-12 w-12 shrink-0 overflow-hidden"
+        className="relative block h-9 w-9 shrink-0 overflow-hidden md:h-12 md:w-12"
       >
         <Image
           src="/logo.png"
@@ -58,7 +58,7 @@ export function Logo({
 
       <span className="leading-none">
         <span
-          className={`font-display block text-[1.7rem] leading-none font-medium tracking-[0.14em] ${main}`}
+          className={`font-display block text-[1.3rem] leading-none font-medium tracking-[0.14em] md:text-[1.7rem] ${main}`}
         >
           ARN
         </span>
