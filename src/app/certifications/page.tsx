@@ -44,7 +44,7 @@ export default function CertificationsPage() {
             description="Each certification covers our manufacturing and quality processes. Copies of current certificates are issued on request with your first order."
           />
         </RevealOnScroll>
-        <div className="mt-20">
+        <div className="mt-12 sm:mt-20">
           <CertificationBadges detailed />
         </div>
       </Section>

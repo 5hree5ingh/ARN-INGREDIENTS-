@@ -55,7 +55,7 @@ export function CtaBand({
 
       <Container className="relative z-10">
         <RevealOnScroll>
-          <div className="flex flex-col items-start gap-12 py-24 sm:py-28 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col items-start gap-10 py-16 sm:gap-12 sm:py-24 lg:py-28 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <span
                 aria-hidden="true"

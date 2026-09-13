@@ -89,7 +89,7 @@ export default function ResearchPage() {
         </div>
       </Section>
 
-      <section className="bg-forest py-24 sm:py-32">
+      <section className="bg-forest py-16 sm:py-24 lg:py-32">
         <Container>
           <RevealOnScroll>
             <SectionHeading
@@ -99,7 +99,7 @@ export default function ResearchPage() {
               tone="light"
             />
           </RevealOnScroll>
-          <div className="mt-20">
+          <div className="mt-12 sm:mt-20">
             <ConsultancyServices tone="light" />
           </div>
         </Container>

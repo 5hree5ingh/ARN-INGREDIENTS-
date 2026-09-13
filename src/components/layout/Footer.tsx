@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { Container } from "@/components/ui/Container";
-import { addressLines, salesOfficeLines, company } from "@/data/company";
+import {
+  addressLines,
+  salesOfficeLines,
+  company,
+  enquiryContacts,
+  mailtoLink,
+} from "@/data/company";
 import { productCategories } from "@/data/products";
 
 const companyLinks = [
@@ -59,7 +65,7 @@ export function Footer() {
           <div>
             <h2 className={headingClass}>Get in Touch</h2>
 
-            <p className="mt-6 text-[0.56rem] font-medium tracking-widest text-ivory/40">MANUFACTURING PLANT</p>
+            <p className="mt-6 text-[0.56rem] font-medium tracking-widest text-ivory/40">MANUFACTURING UNIT</p>
             <address className="mt-2 text-sm leading-7 font-light text-ivory/60 not-italic">
               {addressLines.map((line) => (
                 <span key={line} className="block">
@@ -79,23 +85,30 @@ export function Footer() {
               ))}
             </address>
 
-            <div className="mt-6 flex flex-col">
-              {company.phones.map((p) => (
+            {/* Each line rings a different desk; email is shared and shown once below */}
+            {enquiryContacts.map((contact) => (
+              <div key={contact.label}>
+                <p className="mt-5 text-[0.56rem] font-medium tracking-widest text-ivory/40">
+                  {contact.label.toUpperCase()}
+                </p>
                 <a
-                  key={p}
-                  href={`tel:${p.replace(/[^+\d]/g, "")}`}
-                  className={linkClass}
+                  href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
+                  className={`${linkClass} mt-1`}
                 >
-                  {p}
+                  {contact.phone}
                 </a>
-              ))}
-              <a
-                href={`mailto:${company.email}`}
-                className={`${linkClass} break-all`}
-              >
-                {company.email.toLowerCase()}
-              </a>
-            </div>
+              </div>
+            ))}
+
+            <p className="mt-5 text-[0.56rem] font-medium tracking-widest text-ivory/40">
+              EMAIL
+            </p>
+            <a
+              href={mailtoLink(company.email, "Enquiry — ARN Ingredients")}
+              className={`${linkClass} mt-1 break-all`}
+            >
+              {company.email.toLowerCase()}
+            </a>
           </div>
         </div>
 

@@ -90,7 +90,7 @@ export default function Home() {
             description="Each family is manufactured and released under the same documented controls. Select one to see representative grades, markers and packing."
           />
         </RevealOnScroll>
-        <div className="mt-20">
+        <div className="mt-12 sm:mt-20">
           <ProductCategoryGrid />
         </div>
       </Section>
@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <section className="relative isolate overflow-hidden bg-forest py-24 sm:py-32">
+      <section className="relative isolate overflow-hidden bg-forest py-16 sm:py-24 lg:py-32">
         <Container>
           <RevealOnScroll>
             <SectionHeading
@@ -134,7 +134,7 @@ export default function Home() {
               tone="light"
             />
           </RevealOnScroll>
-          <div className="mt-20">
+          <div className="mt-12 sm:mt-20">
             <ConsultancyServices tone="light" />
           </div>
         </Container>

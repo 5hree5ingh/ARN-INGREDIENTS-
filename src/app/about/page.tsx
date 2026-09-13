@@ -36,7 +36,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About Us"
-        title="A decade of standardising botanicals"
+        title="Two decades of standardising botanicals"
         description="ARN Ingredients Pvt. Ltd. manufactures and exports standardised herbal extracts, phytochemicals and cosmoceutical ingredients from Haridwar, Uttarakhand."
         breadcrumb={[
           { href: "/", label: "Home" },
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </p>
               <p>
                 ARN Ingredients was established by professionals with more than
-                ten years between them in the research, development and
+                twenty years between them in the research, development and
                 manufacture of active pharmaceutical ingredients and
                 standardised herbal extracts.
               </p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Today we supply nutraceutical, pharmaceutical and personal care
-                manufacturers across more than ten countries, and we run
+                manufacturers across more than thirty countries, and we run
                 consultancy work for companies building extraction capability of
                 their own.
               </p>

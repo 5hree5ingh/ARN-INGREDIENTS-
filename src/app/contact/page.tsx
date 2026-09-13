@@ -4,7 +4,13 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { addressLines, salesOfficeLines, company } from "@/data/company";
+import {
+  addressLines,
+  salesOfficeLines,
+  company,
+  enquiryContacts,
+  mailtoLink,
+} from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -38,7 +44,7 @@ export default function ContactPage() {
 
             <div className="mt-12 space-y-10">
               <div>
-                <h3 className={blockLabel}>Manufacturing Plant</h3>
+                <h3 className={blockLabel}>Manufacturing Unit</h3>
                 <address className="mt-3 text-sm leading-8 font-light text-ink-soft not-italic">
                   {addressLines.map((line) => (
                     <span key={line} className="block">
@@ -59,25 +65,26 @@ export default function ContactPage() {
                 </address>
               </div>
 
-              <div>
-                <h3 className={blockLabel}>Telephone</h3>
-                <div className="mt-3">
-                  {company.phones.map((phone) => (
-                    <a
-                      key={phone}
-                      href={`tel:${phone.replace(/[^+\d]/g, "")}`}
-                      className={linkClass}
-                    >
-                      {phone}
-                    </a>
-                  ))}
+              {/* Each line rings a different desk; email is shared and shown once below */}
+              {enquiryContacts.map((contact) => (
+                <div key={contact.label}>
+                  <h3 className={blockLabel}>{contact.label}</h3>
+                  <p className="mt-2 text-xs font-light text-ink-faint">
+                    {contact.note}
+                  </p>
+                  <a
+                    href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
+                    className={`${linkClass} mt-1`}
+                  >
+                    {contact.phone}
+                  </a>
                 </div>
-              </div>
+              ))}
 
               <div>
                 <h3 className={blockLabel}>Email</h3>
                 <a
-                  href={`mailto:${company.email}`}
+                  href={mailtoLink(company.email, "Enquiry — ARN Ingredients")}
                   className={`${linkClass} mt-3 break-all`}
                 >
                   {company.email.toLowerCase()}

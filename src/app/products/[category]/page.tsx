@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PageHeader } from "@/components/sections/PageHeader";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Section } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -38,19 +37,12 @@ export default async function CategoryPage({
 
   return (
     <>
-      <PageHeader
-        eyebrow="Products"
-        title={found.name}
-        description={found.summary}
-        breadcrumb={[
-          { href: "/", label: "Home" },
-          { href: "/products", label: "Products" },
-          { href: `/products/${found.slug}`, label: found.name },
-        ]}
-        image={found.image}
-        imageAlt={found.imageAlt}
-        compact
-      />
+      {/*
+        The header and tab strip are rendered by the layout so they persist
+        across category switches. Only this body is keyed on the slug, so it
+        is the single thing that animates when the category changes.
+      */}
+      <div key={found.slug} className="animate-content-swap">
 
       {/* ── Product list first — tight padding so list starts immediately ── */}
       <section className="grain py-10 sm:py-12">
@@ -105,10 +97,11 @@ export default async function CategoryPage({
         </div>
       </Section>
 
-      <CtaBand
-        title={`Request a ${found.name.toLowerCase()} quotation`}
-        description="Share your target assay, annual volume and destination market — we will respond with a technical data sheet, sample and pricing."
-      />
+        <CtaBand
+          title={`Request a ${found.name.toLowerCase()} quotation`}
+          description="Share your target assay, annual volume and destination market — we will respond with a technical data sheet, sample and pricing."
+        />
+      </div>
     </>
   );
 }
@@ -132,7 +125,47 @@ function ProductTable({ name, items }: { name: string; items: ProductItem[] }) {
       <p className="mt-16 text-sm font-light text-ink-faint">
         {items.length} grades listed
       </p>
-      <div className="mt-4 overflow-x-auto">
+      {/*
+        Phones get stacked cards instead of the table. A five-column spec sheet
+        can only be read on a 375px screen by scrolling sideways through 47
+        rows, which is unusable — as cards, each grade reads top to bottom with
+        its labels attached.
+      */}
+      <ul className="mt-6 space-y-5 sm:hidden">
+        {items.map((item) => (
+          <li key={item.name} className="border border-ink/10 bg-ivory p-5">
+            <h3 className="font-display text-xl leading-snug font-light text-forest">
+              {item.name}
+            </h3>
+            {item.botanical && (
+              <p className="mt-1 text-sm font-light text-ink-faint italic">
+                {item.botanical}
+              </p>
+            )}
+
+            <dl className="mt-4 space-y-2 border-t border-ink/10 pt-4">
+              {[
+                ["Specification", item.spec],
+                ["Method", item.method],
+                ["Application", item.application],
+              ]
+                .filter(([, value]) => value)
+                .map(([label, value]) => (
+                  <div key={label} className="grid grid-cols-[7rem_1fr] gap-3">
+                    <dt className="tracked text-[0.6rem] font-medium text-gold-deep">
+                      {label}
+                    </dt>
+                    <dd className="text-sm leading-6 font-light text-ink-soft">
+                      {value}
+                    </dd>
+                  </div>
+                ))}
+            </dl>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-4 hidden overflow-x-auto sm:block">
         <table className="w-full min-w-[46rem] border-collapse text-left">
           <caption className="sr-only">
             {name} grades and specifications

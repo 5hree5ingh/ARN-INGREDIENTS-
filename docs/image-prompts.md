@@ -1,3 +1,44 @@
+# HERO SLIDESHOW — 2 images still needed
+
+The homepage hero now auto-rotates. Three slides are live already:
+
+1. `hero-main.jpg` — the marble and extract product shot
+2. `FACTORY_IMAGES/extraction_plant.jpg` — extraction hall
+3. `FACTORY_IMAGES/raw_material_storage.jpg` — raw material store
+
+Generate the two below and drop them in `public/images/` — I'll switch them on.
+
+**Both: Generate at 1536×1024 · Final file 2560×1440 (16:9)**
+
+> ### CRITICAL for both
+> The headline sits over the left of the frame. **The left 40% must be dark and
+> almost empty** — no equipment, no bright areas, just shadow falling away. All
+> subject matter belongs in the right two-thirds. If the generator fills the
+> frame, add: *"the left 40% is empty dark shadow with no objects."*
+
+## A. Quality control laboratory — `hero-qc-lab.jpg`
+> A quality-control laboratory in a botanical extract plant. On the right, an
+> analytical HPLC instrument with a rack of sealed sample vials of amber and
+> green extract solutions beside it, and a lab notebook. Warm tungsten light
+> pools over the instruments; the left side of the frame falls away into deep
+> shadow and empty dark benchtop. Calm, exacting, no people's faces, no text or
+> labels on the equipment.
+
+## B. Drum filling and dispatch — `hero-packing.jpg`
+> The packing bay of a botanical extract plant. On the right, a sealed
+> food-grade drum being filled with fine golden extract powder, a stainless
+> scoop and a stack of lidded drums behind it, warm overhead light catching the
+> powder. The left third of the frame is dark, empty warehouse floor falling
+> into shadow. Industrial but immaculate and premium — no clutter, no people's
+> faces, no text or branding on the drums.
+
+Add the same **STYLE BLOCK** below to both, but change *"bright, soft, diffused
+natural daylight"* to **"warm directional light with deep shadow on one side"**
+— these two sit under a dark scrim and need more contrast than the product
+shots.
+
+---
+
 # ARN Ingredients — AI Image Prompts
 
 11 images remaining. Each has a prompt, the size to ask GPT for, and the final

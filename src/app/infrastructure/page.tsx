@@ -82,12 +82,12 @@ export default function InfrastructurePage() {
             description="Photographed at our Haridwar site — the extraction hall, drying and recovery equipment, utilities and warehousing that produce every consignment we ship."
           />
         </RevealOnScroll>
-        <div className="mt-20">
+        <div className="mt-12 sm:mt-20">
           <FacilityGallery />
         </div>
       </Section>
 
-      <section className="bg-forest py-24 sm:py-32">
+      <section className="bg-forest py-16 sm:py-24 lg:py-32">
         <Container>
           <RevealOnScroll>
             <SectionHeading

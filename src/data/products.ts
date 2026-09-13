@@ -14,6 +14,8 @@ export type ProductGroup = {
 export type ProductCategory = {
   slug: string;
   name: string;
+  /** Compact label for the category tab strip. */
+  shortName: string;
   summary: string;
   intro: string;
   icon: "droplet" | "flask" | "leaf" | "molecule" | "sparkle" | "factory";
@@ -30,6 +32,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "herbal-extracts",
     name: "Standardised Herbal Extracts",
+    shortName: "Herbal Extracts",
     summary:
       "Marker-standardised dry and hydro-alcoholic extracts meeting international pharmacopoeia limits.",
     intro:
@@ -95,6 +98,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "phytochemicals",
     name: "Phytochemicals",
+    shortName: "Phytochemicals",
     summary:
       "High-purity isolated actives for pharmaceutical and clinical nutrition applications.",
     intro:
@@ -119,6 +123,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "water-soluble-extracts",
     name: "Water-Soluble Extracts",
+    shortName: "Water-Soluble",
     summary:
       "Fully water-dispersible extracts for beverages, instant mixes and clear liquid formulations.",
     intro:
@@ -159,6 +164,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "spray-dried-powders",
     name: "Spray-Dried Powders",
+    shortName: "Spray-Dried",
     summary:
       "Free-flowing food and pharma-grade fruit, vegetable, dairy and specialty powders.",
     intro:
@@ -240,6 +246,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "essential-oils",
     name: "Essential Oils",
+    shortName: "Essential Oils",
     summary:
       "Steam-distilled and cold-pressed oils with verified aroma and actives profiles.",
     intro:
@@ -263,6 +270,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "oleoresins",
     name: "Oleoresins",
+    shortName: "Oleoresins",
     summary:
       "Solvent-extracted concentrates delivering full flavour and colour at consistent potency.",
     intro:
@@ -286,6 +294,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "cosmoceutical-ingredients",
     name: "Cosmoceutical Ingredients",
+    shortName: "Cosmoceutical",
     summary:
       "Botanical actives selected for skin and hair care, supplied cosmetic-grade for topical formulation.",
     intro:
@@ -313,6 +322,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "contract-manufacturing",
     name: "Contract Manufacturing",
+    shortName: "Contract Mfg",
     summary:
       "End-to-end custom extraction and formulation under your specification and your brand.",
     intro:
@@ -335,6 +345,7 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "active-pharmaceutical-ingredients",
     name: "Active Pharmaceutical Ingredients",
+    shortName: "API",
     summary:
       "High-purity botanical-derived APIs released to USP, EP and IP pharmacopoeial standards with full regulatory documentation.",
     intro:

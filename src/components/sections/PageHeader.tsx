@@ -58,16 +58,9 @@ export function PageHeader({
               </nav>
             )}
 
-            <div className="flex items-baseline gap-6">
-              {eyebrow && (
-                <p className="tracked hidden text-[0.66rem] font-medium text-gold sm:block">
-                  {eyebrow}
-                </p>
-              )}
-              <h1 className="font-display text-[2rem] leading-tight font-light tracking-[-0.015em] text-ivory sm:text-[2.75rem]">
-                {title}
-              </h1>
-            </div>
+            <h1 className="font-display text-[2rem] leading-tight font-light tracking-[-0.015em] text-ivory sm:text-[2.75rem]">
+              {title}
+            </h1>
 
             {description && (
               <p className="mt-4 max-w-2xl text-sm leading-7 font-light text-ivory/55">
@@ -102,7 +95,7 @@ export function PageHeader({
       />
 
       <Container className="relative z-10">
-        <div className="max-w-3xl py-24 sm:py-32">
+        <div className="max-w-3xl py-16 sm:py-24 lg:py-32">
           {breadcrumb && (
             <nav aria-label="Breadcrumb" className="mb-8">
               <ol className="tracked flex flex-wrap items-center gap-3 text-[0.6rem] text-ivory/50">

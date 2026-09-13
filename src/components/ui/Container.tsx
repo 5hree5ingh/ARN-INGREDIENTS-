@@ -22,7 +22,9 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`py-24 sm:py-32 ${className}`}>
+    // 96px of padding top and bottom is generous on a desktop but eats a
+    // phone screen, so the rhythm starts tighter and opens up from sm.
+    <section id={id} className={`py-16 sm:py-24 lg:py-32 ${className}`}>
       <Container>{children}</Container>
     </section>
   );

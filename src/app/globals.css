@@ -25,7 +25,9 @@
   --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-page-enter: page-enter 0.4s ease-out both;
+  --animate-page-enter: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-content-swap: content-swap 0.42s cubic-bezier(0.22, 1, 0.36, 1)
+    both;
 }
 
 html {
@@ -43,6 +45,28 @@ body {
 .tracked {
   letter-spacing: 0.24em;
   text-transform: uppercase;
+}
+
+/*
+ * On phones these labels were rendering as small as 9px, which is not legible
+ * at arm's length — especially letter-spaced and uppercase. Set a floor and
+ * tighten the tracking a little, since wide tracking costs horizontal room
+ * that a 375px screen does not have.
+ */
+@media (max-width: 639px) {
+  .tracked {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+/* Swipeable rows keep their scroll behaviour without showing a scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Thin gold rule that precedes an eyebrow label */
@@ -87,7 +111,23 @@ body {
 @keyframes page-enter {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+ * Swapping content within a section (e.g. between product categories). Softer
+ * and shorter than a full page enter — the surrounding shell never moves, so a
+ * large travel distance would read as a jump rather than a transition.
+ */
+@keyframes content-swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
   }
   to {
     opacity: 1;

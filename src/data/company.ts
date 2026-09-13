@@ -6,16 +6,13 @@ export const company = {
     "Manufacturer, supplier and exporter of standardised herbal extracts, phytochemicals and cosmoceutical ingredients.",
   address: {
     line1: "Plot No. 12/11, Pipli Mini Industrial Area",
-    line2: "Khasra No. 587, Akbarpuruood, Behind Shree Cement",
-    line3: "Haridwar - Laksar Road, Lakshar",
     city: "Haridwar",
     state: "Uttarakhand",
     country: "India",
     pincode: "247663",
   },
   salesOffice: {
-    line1: "C115, Ithum Tower",
-    line2: "Sector 62",
+    line1: "C115, Ithum Tower, Sector 62",
     city: "Noida",
     state: "Uttar Pradesh",
     country: "India",
@@ -27,6 +24,29 @@ export const company = {
   whatsapp: "918840804180",
 } as const;
 
+/**
+ * Enquiry routes, split by purpose so buyers and suppliers call the right
+ * line. Each has its own phone number; email is shared and shown once,
+ * separately, rather than repeated under both.
+ */
+export const enquiryContacts = [
+  {
+    label: "Sales Enquiry",
+    note: "Quotations, samples and orders",
+    phone: company.phones[0],
+  },
+  {
+    label: "Purchase Enquiry",
+    note: "Raw material and vendor offers",
+    phone: company.phones[1],
+  },
+] as const;
+
+/** `mailto:` link with the subject pre-filled. */
+export function mailtoLink(address: string, subject: string) {
+  return `mailto:${address}?subject=${encodeURIComponent(subject)}`;
+}
+
 /** Pre-filled WhatsApp deep link. */
 export function whatsappLink(message: string) {
   return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -34,21 +54,17 @@ export function whatsappLink(message: string) {
 
 export const addressLines = [
   company.address.line1,
-  company.address.line2,
-  company.address.line3,
   `${company.address.city}, ${company.address.state}, ${company.address.country} — ${company.address.pincode}`,
 ];
 
 export const salesOfficeLines = [
   company.salesOffice.line1,
-  company.salesOffice.line2,
   `${company.salesOffice.city}, ${company.salesOffice.state}, ${company.salesOffice.country} — ${company.salesOffice.pincode}`,
 ];
 
-// PLACEHOLDER: confirm real figures before launch.
 export const stats = [
-  { value: 135, suffix: "+", label: "Products" },
-  { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 10, suffix: "+", label: "Countries Served" },
+  { value: 1350, suffix: "+", label: "Products" },
+  { value: 20, suffix: "+", label: "Years Experience" },
+  { value: 30, suffix: "+", label: "Countries Served" },
   { value: 100, suffix: "%", label: "Quality Assured" },
 ];
