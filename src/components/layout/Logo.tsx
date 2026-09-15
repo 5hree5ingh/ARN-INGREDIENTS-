@@ -71,14 +71,27 @@ export function Logo({
         />
       </span>
 
-      <span className="leading-none">
+      <span className="flex flex-col leading-none gap-[0.18rem]">
+        {/* Line 1 — ARN */}
         <span
-          className={`font-display block text-[1.3rem] leading-none font-medium tracking-[0.14em] md:text-[1.7rem] ${main}`}
+          className={`font-display block text-[1.25rem] font-bold tracking-[0.18em] leading-none uppercase md:text-[1.6rem] ${main}`}
+          style={{ WebkitTextStroke: "0.4px currentColor" }}
         >
           ARN
         </span>
-        <span className={`tracked mt-1.5 block text-[0.6rem] font-medium ${sub}`}>
+        {/* Line 2 — INGREDIENTS */}
+        <span
+          className={`font-display block text-[0.72rem] font-bold tracking-[0.2em] leading-none uppercase md:text-[0.9rem] ${sub}`}
+          style={{ WebkitTextStroke: "0.3px currentColor" }}
+        >
           Ingredients
+        </span>
+        {/* Line 3 — tagline */}
+        <span
+          className={`block whitespace-nowrap text-[0.42rem] font-normal italic tracking-[0.12em] opacity-60 md:text-[0.48rem] ${main}`}
+          aria-hidden="true"
+        >
+          Authentic · Reliable · Natural
         </span>
       </span>
     </Link>

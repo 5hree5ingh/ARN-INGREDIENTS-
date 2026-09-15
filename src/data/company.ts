@@ -5,7 +5,7 @@ export const company = {
   description:
     "Manufacturer, supplier and exporter of standardised herbal extracts, phytochemicals and cosmoceutical ingredients.",
   address: {
-    line1: "Plot No. 12/11, Pipli Mini Industrial Area",
+    line1: "Plot No. 1-11, Pipli Mini Industrial Area",
     city: "Haridwar",
     state: "Uttarakhand",
     country: "India",
