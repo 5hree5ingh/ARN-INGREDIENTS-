@@ -75,14 +75,14 @@ export function Logo({
         {/* Line 1 — ARN */}
         <span
           className={`font-display block text-[1.25rem] font-bold tracking-[0.18em] leading-none uppercase md:text-[1.6rem] ${main}`}
-          style={{ WebkitTextStroke: "0.4px currentColor" }}
+          style={{ textShadow: "0.2px 0 currentColor, -0.2px 0 currentColor, 0 0.2px currentColor, 0 -0.2px currentColor" }}
         >
           ARN
         </span>
         {/* Line 2 — INGREDIENTS */}
         <span
           className={`font-display block text-[0.72rem] font-bold tracking-[0.2em] leading-none uppercase md:text-[0.9rem] ${sub}`}
-          style={{ WebkitTextStroke: "0.3px currentColor" }}
+          style={{ textShadow: "0.2px 0 currentColor, -0.2px 0 currentColor, 0 0.2px currentColor, 0 -0.2px currentColor" }}
         >
           Ingredients
         </span>
