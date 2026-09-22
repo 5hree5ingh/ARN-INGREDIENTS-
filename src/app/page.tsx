@@ -13,21 +13,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { ButtonLink } from "@/components/ui/Button";
 
-const principles = [
-  {
-    title: "Standardised to a marker",
-    body: "Every grade is tied to a named marker compound and an analytical method — not a nominal extraction ratio.",
-  },
-  {
-    title: "Tested to pharmacopoeial limits",
-    body: "Heavy metals, pesticide residue and microbiology are verified against USP, EP and IP limits before release.",
-  },
-  {
-    title: "Documented for export",
-    body: "Certificate of analysis, MSDS, allergen and origin declarations travel with every consignment.",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -35,7 +20,7 @@ export default function Home() {
       <StatsBar />
 
       <Section className="grain">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-24">
           <RevealOnScroll>
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -47,7 +32,7 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              {/* Gold frame offset, a quiet luxury detail */}
+              {/* Gold frame offset */}
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute -right-5 -bottom-5 hidden h-full w-full border border-gold/50 sm:block"
@@ -56,27 +41,62 @@ export default function Home() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.12}>
-            <SectionHeading
-              eyebrow="Who We Are"
-              title="Botanicals held to a pharmaceutical standard"
-              description="ARN Ingredients was founded by people who came up through extraction plants and analytical laboratories. That background shapes how we work: a botanical is only useful to a formulator once it behaves predictably, batch after batch."
-            />
+            <p className="font-display text-[0.6rem] tracking-[0.22em] uppercase text-gold">
+              About Us
+            </p>
 
-            <dl className="mt-12 space-y-9">
-              {principles.map((p) => (
-                <div key={p.title} className="border-l border-gold/40 pl-7">
-                  <dt className="font-display text-xl font-light text-forest">
-                    {p.title}
-                  </dt>
-                  <dd className="mt-2 text-sm leading-7 font-light text-ink-soft">
-                    {p.body}
-                  </dd>
+            <h2 className="font-display mt-4 text-3xl font-light leading-snug text-forest sm:text-4xl">
+              ARN Ingredients Pvt Ltd
+            </h2>
+
+            <div className="mt-8 space-y-5 font-light text-ink-soft leading-[1.9]">
+              <p className="font-display text-[1.2rem] leading-[1.7] text-forest">
+                <strong className="font-semibold">Authentic, Reliable, Natural</strong> — as our name, ARN Ingredients
+                is led by a team of strong R&amp;D and techno-commercial
+                professionals having rich experience of over{" "}
+                <strong className="font-semibold">20 years</strong> in natural
+                extracts, from nature to science-backed ingredients.
+              </p>
+
+              <p className="text-sm">
+                ARN provides a complete solution from ingredients to formulations
+                in all the therapeutic segments. Rooted in nature, branching
+                into science, our extracts nurture global potential.
+              </p>
+
+              <p className="text-sm">
+                Our facility with a cutting-edge{" "}
+                <strong className="font-medium text-ink">cGMP manufacturing plant</strong>{" "}
+                is spread in a pristine, pollution-free environment near the
+                Ganges (Ganga river).
+              </p>
+
+              <p className="text-sm">
+                We provide customer-based solutions and support for long-term
+                business partnerships.
+              </p>
+            </div>
+
+            {/* A · R · N tag line */}
+            <div className="mt-10 flex gap-6 border-t border-gold/25 pt-8">
+              {[
+                { letter: "A", word: "Authentic" },
+                { letter: "R", word: "Reliable" },
+                { letter: "N", word: "Natural" },
+              ].map((item) => (
+                <div key={item.letter} className="flex items-baseline gap-2">
+                  <span className="font-display text-2xl font-light text-gold-deep">
+                    {item.letter}
+                  </span>
+                  <span className="text-[0.7rem] tracking-widest uppercase text-ink-soft">
+                    {item.word}
+                  </span>
                 </div>
               ))}
-            </dl>
+            </div>
 
-            <ButtonLink href="/about" variant="outline" className="mt-12">
-              Our Story
+            <ButtonLink href="/about" variant="outline" className="mt-10">
+              Learn More
             </ButtonLink>
           </RevealOnScroll>
         </div>

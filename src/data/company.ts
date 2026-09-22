@@ -3,7 +3,7 @@ export const company = {
   shortName: "ARN Ingredients",
   tagline: "Standardised by Science, Sourced from Nature",
   description:
-    "Manufacturer, supplier and exporter of standardised herbal extracts, phytochemicals and cosmoceutical ingredients.",
+    "Authentic, Reliable, Natural — complete solutions from ingredients to formulations in all therapeutic segments, backed by 20+ years of R&D expertise.",
   address: {
     line1: "Plot No. 1-11, Pipli Mini Industrial Area",
     city: "Haridwar",
